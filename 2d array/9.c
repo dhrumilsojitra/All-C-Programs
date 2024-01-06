@@ -1,37 +1,29 @@
 #include<stdio.h>
 int main(){
-   
-   int arr[30][30],i,j,row,col,sum = 0,antidiag=0,digonal=0;
-   printf("enter the row&coloum : ");
-   scanf("%d %d",&row,&col);
-   printf("enter elements"); 
-   
-   for(i=0;i<row;i++){
-    for(j=0;j<col;j++){
-        scanf("%d",&arr[i][j]);
-     }
-   
-   }
-   
-   printf("\n entered elements are \n");
-   for(i=0;i<row;i++){
-      for(j=0;j<col;j++){
-        printf("%d ",arr[i][j]);
-        sum += arr[i][j];
-        if( i + j ==2 ){
-            antidiag += arr[i][j];
+    int a[20][20],m,n,i,j,cross_diag=0,t;
+    printf("Enter row and column:");
+    scanf("%d %d",&m,&n);
+if(m==n){
+    printf("Eneter the array of elements:");
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            scanf("%d",&a[i][j]);
         }
-         if(i==j){
-            digonal += arr[i][j];
+    }
+    t= m-1;
+    printf("\n enertd array: \n");
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            printf("%d ",a[i][j]);
+            if(i==j || i+j==t ){
+                cross_diag = cross_diag+a[i][j];
             }
-
-      }
-      printf("\n");
-   }
-   printf("\n antidiagonal is %d",antidiag);
-   printf("\n diagonal is %d",digonal);
-   printf("\n Cross-diagonal is %d",digonal+antidiag);
-
-   return 0;
-     
+        }
+        printf("\n");
+    }
+    printf("\n cross_diag sum of array element:%d",cross_diag);
+    } else{
+        printf("\n Eneter sam row and column...");
+    }
+    return 0;
 }
