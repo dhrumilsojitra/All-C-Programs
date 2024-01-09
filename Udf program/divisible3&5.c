@@ -7,6 +7,7 @@ int divided(int a){
 
     }
 } 
+
 void main(){
     int n;
     printf("Enter n:");
